@@ -1,17 +1,86 @@
+/* eslint-disable react/no-unescaped-entities */
 /* eslint-disable react/no-unknown-property */
 import { FaShoppingCart } from "react-icons/fa";
 // import Swiper styles
 // Import Swiper React components
-import { Swiper, SwiperSlide } from "swiper/react";
 import { FaCheckCircle } from "react-icons/fa";
-import { FaMinus } from "react-icons/fa";
 
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 function App() {
+  // const [data, setData] = useState(false);
+
+  // const loginUrl = 'http://127.0.0.1:8000/api/method/login/';
+  // const options = {
+  //      usr: 'someuser@gmail.com',
+  //      pwd: 'some_password'
+  //   };
+  //   const config = {
+  //     headers: {
+  //       'Content-Type': 'application/x-www-form-urlencoded'
+  //      }
+  //   }
+  //   axios.post(loginUrl, options, config)
+  //   .then((response) => {
+  //     console.log(response);
+  //   })
+  //   .catch((error) => {
+  //     console.log(error);
+  //   });
+
+  // https://ecommerce.ionicerp.xyz/app/item
+
+  // const url = "https://ecommerce.ionicerp.xyz/api/method/item";
+
+  useEffect(() => {
+    fetch("https://ecommerce.ionicerp.xyz/api/method/item", {
+      "Content-Type	": "application/json",
+      "Accept": "text/html,application/xhtml+xml",
+    })
+      .then((res) => res.json())
+      .then((data) => console.log(data));
+  }, []);
+
+  // fetch(url)
+  // .then(response => {
+  //   if (!response.ok) {
+  //     throw new Error('Network response was not ok ' + response.statusText);
+  //   }
+  //   return response.json();
+  // })
+  // .then(data => {
+  //   console.log(data);
+  // })
+  // .catch(error => {
+  //   console.error('There has been a problem with your fetch operation:', error);
+  // })
+
+  // /frappe.auth.get\_logged\_user
+
+  // const [formData, setFormData] = useState();
+
+  // useEffect(() => {
+  //   fetchData();
+  // }, []);
+
+  // const fetchData = async () => {
+  //   try {
+  //     const response = await axios.get(
+  //       "https://ecommerce.ionicerp.xyz/api/method/item"
+  //     );
+  //     setFormData(response.data);
+  //   } catch (error) {
+  //     console.error("Error fetching form data:", error);
+  //   }
+  // };
+
+  // console.log(formData);
+
   return (
     <section className="bg-[#F4F3EA] mt-3 lg:h-[600px] h-[380px]">
       <div className="text-center">
@@ -32,7 +101,7 @@ function App() {
           আপনার প্রিয়জনের পোশাকে ফুটিয়ে তুলবে রুচিশীল এক নাজাতীয় আভিজাত্য।
         </h2>
         <div className="mt-8 text-center">
-          <iframe
+          {/* <iframe
             className="lg:w-[900px] w-full h-[400px] lg:h-[600px] mx-auto"
             src="https://www.youtube.com/embed/eHOyie4ma_A?si=oI9anDYSjUQpXahK"
             title="YouTube video player"
@@ -40,7 +109,7 @@ function App() {
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             referrerpolicy="strict-origin-when-cross-origin"
             allowfullscreen
-          ></iframe>
+          ></iframe> */}
         </div>
 
         <div className="text-center mt-6 border-4 rounded-full w-96 mx-auto border-[#d3ac2b] hover:border-gray-800 p-2 hover:scale-110 duration-300	">
@@ -127,7 +196,7 @@ function App() {
               viewBox="0 0 150 150"
               preserveAspectRatio="none"
             >
-              <ellipse
+              {/* <ellipse
                 cx="80"
                 cy="80"
                 rx="60"
@@ -135,7 +204,7 @@ function App() {
                 fill="none"
                 stroke="#38b000"
                 stroke-width="5"
-              />
+              /> */}
             </svg>
           </span>{" "}
           টাকা
@@ -151,7 +220,7 @@ function App() {
         </div>
       </div>
       {/* card Section */}
-      <section className="bg-[#F4F3EA] mt-8 p-5">
+      {/* <section className="bg-[#F4F3EA] mt-8 p-5">
         <div className="border-4 border-[#d3ac2b] max-w-screen-xl rounded-lg mx-auto p-3">
           <div className="md:flex items-center gap-4">
             <div className="flex-1 space-y-3 font-bold p-2">
@@ -247,7 +316,7 @@ function App() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
       {/* ---------------------- */}
       <section className="max-w-screen-xl mt-8 mx-auto p-5">
         <div>
