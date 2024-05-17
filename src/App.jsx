@@ -39,8 +39,7 @@ function App() {
 
   useEffect(() => {
     fetch("https://ecommerce.ionicerp.xyz/api/method/item", {
-      "Content-Type	": "application/json",
-      "Accept": "text/html,application/xhtml+xml",
+      // mode: "no-cors",
     })
       .then((res) => res.json())
       .then((data) => console.log(data));
