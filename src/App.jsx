@@ -10,10 +10,10 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { useEffect, useState } from "react";
-import axios from "axios";
+import From from "./components/From";
 
 function App() {
-  // const [data, setData] = useState(false);
+  const [borkha, setData] = useState();
 
   // const loginUrl = 'http://127.0.0.1:8000/api/method/login/';
   // const options = {
@@ -38,11 +38,9 @@ function App() {
   // const url = "https://ecommerce.ionicerp.xyz/api/method/item";
 
   useEffect(() => {
-    fetch("https://ecommerce.ionicerp.xyz/api/method/item", {
-      // mode: "no-cors",
-    })
+    fetch("https://ecommerce.ionicerp.xyz/api/method/item")
       .then((res) => res.json())
-      .then((data) => console.log(data));
+      .then((data) => setData(data));
   }, []);
 
   // fetch(url)
@@ -82,6 +80,15 @@ function App() {
 
   return (
     <section className="bg-[#F4F3EA] mt-3 lg:h-[600px] h-[380px]">
+      {/* <div>
+        {borkha?.data?.map((item) => {
+          console.log(item);
+          return <h1>
+            {item.description}
+            <img src="" alt="" />
+          </h1>;
+        })}
+      </div> */}
       <div className="text-center">
         <img
           className="inline"
@@ -375,6 +382,10 @@ function App() {
           </div>
         </div>
       </section>
+
+      {/* React Feom used */}
+      <From/>
+      
     </section>
   );
 }
